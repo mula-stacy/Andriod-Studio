@@ -13,11 +13,32 @@
         android:theme="@style/Theme.Mula"
         tools:targetApi="31">
         <activity
+            android:name=".IntentActivity"
+            android:exported="true"
+            android:label="@string/title_activity_intent"
+            android:theme="@style/Theme.Mula">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FormActivity"
+            android:exported="true"
+            android:label="@string/title_activity_form"
+            android:theme="@style/Theme.Mula">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".imageActivity"
             android:exported="true"
             android:label="@string/title_activity_image"
-            android:theme="@style/Theme.Mula">
-        </activity>
+            android:theme="@style/Theme.Mula" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

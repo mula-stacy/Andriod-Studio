@@ -1,10 +1,12 @@
 package com.example.mula
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,6 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.TestModifierUpdaterLayout
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -48,8 +51,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun demo(){
+
+    val mContext= LocalContext.current
     Column (modifier = Modifier
         .fillMaxSize()
+        .background(Color.Gray)
         .padding(20.dp)){
         Text(text = "Hello Mula",
             color = Color.Cyan,
@@ -104,7 +110,7 @@ fun demo(){
         Box {
             Text(text = "Yes",
                 fontSize = 30.sp,
-                color = Color.Yellow)
+                color = Color.Blue)
 
 
 
@@ -115,10 +121,12 @@ fun demo(){
 
         }
         //Button
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {
+                         mContext.startActivity(Intent(mContext,FormActivity::class.java))
+        },
             shape = RectangleShape,
             colors = ButtonDefaults.buttonColors(Color.Magenta)) {
-            Text(text = "Click Me")
+            Text(text = "Form")
     }
         Button(onClick = { /*TODO*/ },
             shape = CutCornerShape(5.dp),
@@ -130,13 +138,27 @@ fun demo(){
 
             
         }
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {/*TODO*/
+        },
             shape = CutCornerShape(5.dp),
             border = BorderStroke(3.dp, Color.Blue),
             colors = ButtonDefaults.outlinedButtonColors())
         {
             Text(text = "Bordered button")
 
+        }
+        Spacer(modifier = Modifier.height(50.dp))
+        //Intent
+        Button(onClick = {
+                         mContext.startActivity(Intent(mContext,imageActivity::class.java))
+        },
+            colors = ButtonDefaults.outlinedButtonColors(Color.Black),
+            shape = CutCornerShape(5.dp),
+            modifier = Modifier.padding(start = 150.dp)
+        )
+        {
+            Text(text = "Next", color = Color.White)
+            
         }
 
         

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Mula</string>
     <string name="title_activity_image">imageActivity</string>
+    <string name="title_activity_scroll">ScrollActivity</string>
+    <string name="title_activity_form">FormActivity</string>
+    <string name="title_activity_intent">IntentActivity</string>
 </resources>
