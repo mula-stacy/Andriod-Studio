@@ -63,7 +63,7 @@ fun myIntent() {
         modifier = Modifier
             .fillMaxSize()
             .paint(
-                painterResource(id = R.drawable.img_5),
+                painterResource(id = R.drawable.img_12),
                 contentScale = ContentScale.FillBounds
             )
 
@@ -219,7 +219,9 @@ fun myIntent() {
         //CAMERA
         OutlinedButton(onClick = {
             val cameraIntent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            if(cameraIntent.resolveActivity(mContext.packageManager)!=null){}else{
+            if(cameraIntent.resolveActivity(mContext.packageManager)!=null){
+
+            }else{
                 println("camera app is not available")
             }
         },

@@ -13,9 +13,21 @@
         android:theme="@style/Theme.Mula"
         tools:targetApi="31">
         <activity
-            android:name=".IntentActivity"
+            android:name=".HomePageActivity"
             android:exported="true"
-            android:label="@string/title_activity_intent"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.Mula">
+
+        </activity>
+        <activity
+            android:name=".LottieAimationActivity"
+            android:exported="true"
+            android:label="@string/title_activity_lottie_aimation"
+            android:theme="@style/Theme.Mula"></activity>
+        <activity
+            android:name=".SplashscreenActivity"
+            android:exported="true"
+            android:label="Mula"
             android:theme="@style/Theme.Mula">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,16 +36,25 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".PracticalActivity"
+            android:exported="true"
+            android:label="@string/title_activity_practical"
+            android:theme="@style/Theme.Mula"></activity>
+        <activity
+            android:name=".IntentActivity"
+            android:exported="true"
+            android:label="@string/title_activity_intent"
+            android:theme="@style/Theme.Mula" />
+        <activity
             android:name=".FormActivity"
             android:exported="true"
             android:label="@string/title_activity_form"
-            android:theme="@style/Theme.Mula">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.Mula" />
+        <activity
+            android:name=".ScrollActivity"
+            android:exported="true"
+            android:label="@string/title_activity_form"
+            android:theme="@style/Theme.Mula" />
         <activity
             android:name=".imageActivity"
             android:exported="true"
@@ -43,13 +64,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Mula">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.Mula"></activity>
     </application>
 
 </manifest>

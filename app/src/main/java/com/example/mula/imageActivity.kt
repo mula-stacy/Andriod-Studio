@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -60,10 +61,10 @@ fun myimage() {
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize().background(Color.Gray)
             .padding(10.dp)
     ) {
-        TopAppBar(title = { Text(text = "form", fontWeight = FontWeight.Bold, fontSize = 25.sp) },
+        TopAppBar(title = { Text(text = "About", fontWeight = FontWeight.Bold, fontSize = 25.sp) },
             colors = TopAppBarDefaults.largeTopAppBarColors(Color.Blue),
             navigationIcon = {
                 IconButton(onClick = { mContext.startActivity(Intent(mContext,MainActivity::class.java)) }) {

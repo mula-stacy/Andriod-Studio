@@ -53,6 +53,10 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.example.mula.ui.theme.MulaTheme
 
 class FormActivity : ComponentActivity() {
@@ -76,7 +80,7 @@ fun myForm(){
     Column(modifier = Modifier.fillMaxSize()) {
 
         //TopAppBar
-        TopAppBar(title = { Text(text = "form", fontWeight = FontWeight.Bold, fontSize = 25.sp, color = Color.Cyan) },
+        TopAppBar(title = { Text(text = "Form", fontWeight = FontWeight.Bold, fontSize = 25.sp, color = Color.Cyan) },
             colors = TopAppBarDefaults.largeTopAppBarColors(Color.Blue),
             navigationIcon = {
                 IconButton(onClick = { mContext.startActivity(Intent(mContext,ScrollActivity::class.java)) }) {
@@ -102,10 +106,9 @@ fun myForm(){
         Spacer(modifier = Modifier.height(10.dp))
         Box(modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.Center,) {
-            Image(
-                painter = painterResource(id = R.drawable.img_5), contentDescription = "",
-                modifier = Modifier.size(200.dp)
-            )
+            val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.animation_lm07imta))
+            val progress by animateLottieCompositionAsState(composition)
+            LottieAnimation(composition, progress, modifier = Modifier.size(200.dp) )
         }
 
 

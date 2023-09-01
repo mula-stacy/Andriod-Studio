@@ -121,6 +121,7 @@ fun demo(){
 
         }
         //Button
+        //FORM
         Button(onClick = {
                          mContext.startActivity(Intent(mContext,FormActivity::class.java))
         },
@@ -128,6 +129,7 @@ fun demo(){
             colors = ButtonDefaults.buttonColors(Color.Magenta)) {
             Text(text = "Form")
     }
+        //ADD TO CUT
         Button(onClick = { /*TODO*/ },
             shape = CutCornerShape(5.dp),
             colors = ButtonDefaults.buttonColors(Color.Magenta)
@@ -138,16 +140,26 @@ fun demo(){
 
             
         }
-        Button(onClick = {/*TODO*/
+        //JUMIA
+        Button(onClick = {mContext.startActivity(Intent(mContext,PracticalActivity::class.java))
         },
             shape = CutCornerShape(5.dp),
             border = BorderStroke(3.dp, Color.Blue),
-            colors = ButtonDefaults.outlinedButtonColors())
+            colors = ButtonDefaults.buttonColors(Color.Cyan))
         {
-            Text(text = "Bordered button")
+            Text(text = "JUMIA")
 
         }
-        Spacer(modifier = Modifier.height(50.dp))
+        //INTENTS
+        Button(onClick = {mContext.startActivity(Intent(mContext,IntentActivity::class.java))
+        },
+            shape = CutCornerShape(5.dp),
+            border = BorderStroke(3.dp, Color.Blue),
+            colors = ButtonDefaults.buttonColors(Color.Red))
+        {
+            Text(text = "Go to intents")
+
+        }
         //Intent
         Button(onClick = {
                          mContext.startActivity(Intent(mContext,imageActivity::class.java))
@@ -158,7 +170,19 @@ fun demo(){
         )
         {
             Text(text = "Next", color = Color.White)
-            
+
+        }
+        //splash
+        Button(onClick = {
+            mContext.startActivity(Intent(mContext,LottieAimationActivity::class.java))
+        },
+            colors = ButtonDefaults.outlinedButtonColors(Color.Black),
+            shape = CutCornerShape(5.dp),
+            modifier = Modifier.padding(start = 150.dp)
+        )
+        {
+            Text(text = "lottie", color = Color.White)
+
         }
 
         
