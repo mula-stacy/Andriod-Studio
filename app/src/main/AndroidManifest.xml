@@ -13,17 +13,22 @@
         android:theme="@style/Theme.Mula"
         tools:targetApi="31">
         <activity
-            android:name=".HomePageActivity"
+            android:name=".LocationActivity"
             android:exported="true"
-            android:label="@string/title_activity_home_page"
+            android:label="@string/title_activity_location"
             android:theme="@style/Theme.Mula">
 
         </activity>
         <activity
+            android:name=".HomePageActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.Mula"></activity>
+        <activity
             android:name=".LottieAimationActivity"
             android:exported="true"
             android:label="@string/title_activity_lottie_aimation"
-            android:theme="@style/Theme.Mula"></activity>
+            android:theme="@style/Theme.Mula" />
         <activity
             android:name=".SplashscreenActivity"
             android:exported="true"
@@ -39,7 +44,7 @@
             android:name=".PracticalActivity"
             android:exported="true"
             android:label="@string/title_activity_practical"
-            android:theme="@style/Theme.Mula"></activity>
+            android:theme="@style/Theme.Mula" />
         <activity
             android:name=".IntentActivity"
             android:exported="true"
@@ -64,7 +69,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Mula"></activity>
+            android:theme="@style/Theme.Mula" />
     </application>
 
 </manifest>

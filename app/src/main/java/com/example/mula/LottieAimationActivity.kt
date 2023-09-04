@@ -6,12 +6,18 @@ import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -51,7 +57,7 @@ fun myLottie(){
     val mContext= LocalContext.current
     Column(modifier = Modifier.fillMaxSize()) {
         //topbar
-        TopAppBar(title = { Text(text = "JUMIA", fontWeight = FontWeight.Bold, fontSize = 25.sp) },
+        TopAppBar(title = { Text(text = "About Us", fontWeight = FontWeight.Bold, fontSize = 25.sp) },
             colors = TopAppBarDefaults.largeTopAppBarColors(Color.Blue),
             navigationIcon = {
                 IconButton(onClick = {
@@ -77,6 +83,7 @@ fun myLottie(){
                 }) {
                     Icon(imageVector = Icons.Filled.Share, contentDescription = "share")
                 }
+
                 IconButton(onClick = {
                     val settingsIntent = Intent(Settings.ACTION_SETTINGS)
                     mContext.startActivity(settingsIntent)
@@ -87,7 +94,22 @@ fun myLottie(){
         val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.animation_llyuf7iv))
         val progress by animateLottieCompositionAsState(composition)
         LottieAnimation(composition, progress, modifier = Modifier.size(500.dp) )
+
+        Spacer(modifier = Modifier.height(20.dp))
+        Button(onClick = {
+                         mContext.startActivity(Intent(mContext,LocationActivity::class.java))
+            
+        },
+            modifier = Modifier.padding(150.dp),
+            colors = ButtonDefaults.buttonColors(Color.Blue),
+            shape = CutCornerShape(5.dp)
+        ) {
+            Text(text = "See Location",
+                color = Color.Black)
+            
+        }
     }
+
 }
 
 
